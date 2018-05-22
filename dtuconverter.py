@@ -17,10 +17,10 @@ if __name__ == "__main__":
         signal = d
         
         n_sig = 6
-        wfdb.wrsamp("ecgrecm", fs = 4000, units=["mV"]*n_sig,
+        wfdb.wrsamp("name", fs = 4000, units=["mV"]*n_sig,
                     sig_name=["ch1otv1", "ch1otv2", "ch1otv3", "ch2ovt1", "ch2otv2", "ch2otv3"],
-                    p_signal = signal, fmt=["16"]*n_sig, write_dir="C:\PyFile\ecg")
-        signals, fields = wfdb.rdsamp("C:\PyFile\ecg\ecgrecm", sampfrom=0, sampto="end", channels="all")
+                    p_signal = signal, fmt=["16"]*n_sig, write_dir="directory")
+        signals, fields = wfdb.rdsamp("directory\name", sampfrom=0, sampto="end", channels="all")
         
         fs = 4000
         t = np.arange(0, len(signals)/fs, 1.0/fs)
