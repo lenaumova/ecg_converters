@@ -8,10 +8,10 @@ from matplotlib import pyplot as plt
 import numpy as np
 import xml.etree.ElementTree as ET
 import wfdb
-from zetlabreadern import load_xml_header
-from zetlabreadern import anaread
-from zetlabreadern import readint
-from zetlabreadern import readshort
+from zetlabreader import load_xml_header
+from zetlabreader import anaread
+from zetlabreader import readint
+from zetlabreader import readshort
 
 #def build_args():
     #parser = ArgumentParser()
