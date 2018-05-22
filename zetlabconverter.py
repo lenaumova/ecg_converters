@@ -13,17 +13,6 @@ from zetlabreader import anaread
 from zetlabreader import readint
 from zetlabreader import readshort
 
-#def build_args():
-    #parser = ArgumentParser()
-
-   # parser.add_argument(
-        #"-o", "--out-file",
-        #type=str,
-        #help="Output file name"
-    #)
-
-    #return parser.parse_known_args()
-
 if __name__ == "__main__":
     
     if len(sys.argv) > 1:
@@ -47,11 +36,11 @@ if __name__ == "__main__":
         #print("signal=")
         #print(signal)
         
-        wfdb.wrsamp("ECG", fs = 2000, units=["mV"]*count,
+        wfdb.wrsamp("name", fs = 2000, units=["mV"]*count,
                     sig_name=["name1", "name2", "name3"],
-                    p_signal = signal, fmt=["16"]*count, write_dir="C:\PyFile\ecg")
+                    p_signal = signal, fmt=["16"]*count, write_dir="directory\name")
         
-        signals, fields = wfdb.rdsamp("C:\PyFile\ecg\ECG", sampfrom=0, sampto="end", channels="all")
+        signals, fields = wfdb.rdsamp("directory\name", sampfrom=0, sampto="end", channels="all")
 
         fs = 2000
         t = np.arange(0, len(signals)/fs, 1.0/fs)
