@@ -12,7 +12,6 @@ from zetlabreadern import load_xml_header
 from zetlabreadern import anaread
 from zetlabreadern import readint
 from zetlabreadern import readshort
-from argparse import ArgumentParser
 
 #def build_args():
     #parser = ArgumentParser()
