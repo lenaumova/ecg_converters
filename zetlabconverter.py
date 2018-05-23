@@ -17,22 +17,22 @@ if __name__ == "__main__":
     
     if len(sys.argv) > 1:
         files = sys.argv[1:]
-        count = len(files)
+        count = len(files) #считаем, сколько в командную строку ввели файлов
         #print("count=")
         #print(count)
-        sig = np.array([])
+        sig = np.array([]) #создаем пустой массив-строку
         for fn in files:
             d, fs, n = anaread(fn)
             #print("d=")
             #print(d)
-            sig = np.concatenate((sig, d))
+            sig = np.concatenate((sig, d)) #накапливаем в пустой массив-строку данные, полученные из обрабатываемых файлов
             #print("sig=")
             #print(sig)
         
-        sigsplit = np.hsplit(sig, count)
+        sigsplit = np.hsplit(sig, count) #дробим массив sig, в котором записаны данные всех файлов, на строки, число которых равно число файлов
         #print("sigsplit=")
         #print(sigsplit)
-        signal = np.transpose(sigsplit)
+        signal = np.transpose(sigsplit) #транспонтруем полученный ранее полученный массив (далее его и отправим в wrsamp) 
         #print("signal=")
         #print(signal)
         
